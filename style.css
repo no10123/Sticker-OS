@@ -1,0 +1,96 @@
+/*catppuccin mocha color theme*/
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89b4fa;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #313244;
+    --surface1: #212134;
+    --surface0: #1e1e2e;
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+}
+
+body {
+    background-color: #1e1e2e;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+h1, p {
+    color: #cdd6f4;
+}
+
+#control {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    position: absolute;
+}
+
+.hc {
+    position: absolute;
+    transform: translate(-20px, -5px);
+    transform: rotate(15);
+    transform: scale(0.1);
+}
+
+.centered {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sticker {
+  display: inline-block;
+  padding: 15px 25px;
+  font-weight: 900;
+  color: #fff;
+  /*background: linear-gradient(135deg, #ff007f, #7f00ff);*/
+  filter: 
+    drop-shadow( 5px   0px  0px #ffffff)
+    drop-shadow(-5px   0px  0px #ffffff)
+    drop-shadow( 0px   5px  0px #ffffff)
+    drop-shadow( 0px  -5px  0px #ffffff)
+    drop-shadow( 4px   4px  0px #ffffff)
+    drop-shadow(-4px  -4px  0px #ffffff)
+    drop-shadow( 4px  -4px  0px #ffffff)
+    drop-shadow(-4px   4px  0px #ffffff)
+    drop-shadow(3px 5px 6px rgba(0, 0, 0, 0.3));
+  transform: rotate(-3deg);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  user-select: none;
+}
+
+.sticker:hover {
+  transform: rotate(-1deg) scale(1.05);
+  cursor: pointer;
+}
