@@ -11,6 +11,7 @@
         <h1 class="title centered">Sticker OS</h1>
         <img class="sticker hc" src="hc-link.png"  onclick="window.open('https://hackclub.com/', '_blank');"></img>
         <img class="sticker calculator" src="calculator.png" onclick="AMI.openApp('calculator')">
+        <img class="sticker notes" src="sticky-tape.png" onclick="AMI.openApp('notes')">
     </div>
     <div id="viewport"></div>
     <div id="templates">
@@ -41,6 +42,9 @@
                 <button type="button" class="Calc-btn calc-btn-wide" data-value="0">0</button>
                 <button type="button" class="Calc-btn" data-value=".">.</button>
             </div>
+        </template>
+        <template id="t-notes" class="dragable hidden">
+            <textarea class="notes-textarea" placeholder="notes..."></textarea>
         </template>
     </div>
     <script src="script.js"></script>

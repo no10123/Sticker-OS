@@ -3,15 +3,15 @@ const viewport = document.getElementById("viewport");
 let W = '<div id="windows">\n';
 
 const systemApps = [
-    { n: "calculator", i: "fa-calculator", t: "Calculator", w: 300, h: 450 }
+    { n: "calculator", t: "Calculator", w: 300, h: 450 },
+    { n: "notes",      t: "Notes",      w: 300, h: 450 }
 ];
 
-function CreateApp(n, i, t, w = 600, h = 450) {
+function CreateApp(n, t, w = 600, h = 450) {
     W += `
         <div id="${n}" class="dragable hidden" style="width:${w}px;height:${h}px;">
             <div class="drag" id="${n}-header">
                 <div>
-                    <i class="fa-solid ${i}"></i>
                     <span class="wTitle">${t}</span>
                 </div>
                 <div class="window-controls">
@@ -23,8 +23,8 @@ function CreateApp(n, i, t, w = 600, h = 450) {
         </div>`;
 }
 
-systemApps.forEach(({ n, i, t, w, h }) => {
-    CreateApp(n, i, t, w, h);
+systemApps.forEach(({ n, t, w, h }) => {
+    CreateApp(n, t, w, h);
 });
 
 viewport.innerHTML = `${W}</div>`;
