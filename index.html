@@ -9,7 +9,39 @@
 <body>
     <div id="control">
         <h1 class="title centered">Sticker OS</h1>
-        <div class="app hc centered"><img class="sticker" src="hc-link.png"></img><p>hc link</p></div>
+        <img class="sticker hc" src="hc-link.png"  onclick="window.open('https://hackclub.com/', '_blank');"></img>
+        <img class="sticker calculator" src="calculator.png" onclick="AMI.openApp('calculator')">
+    </div>
+    <div id="viewport"></div>
+    <div id="templates">
+        <template id="t-calculator" class="dragable hidden">
+            <div id="calc-display" class="calc-display-area">0</div>
+            
+            <div id="calculator-buttons" class="calc-grid calc-button-grid">
+                <button type="button" class="Calc-btn" data-value="AC">AC</button>
+                <button type="button" class="Calc-btn" data-value="%">%</button>
+                <button type="button" class="Calc-btn" data-value="/">/</button>
+                <button type="button" class="Calc-btn" data-value="*">*</button>
+                
+                <button type="button" class="Calc-btn" data-value="7">7</button>
+                <button type="button" class="Calc-btn" data-value="8">8</button>
+                <button type="button" class="Calc-btn" data-value="9">9</button>
+                <button type="button" class="Calc-btn" data-value="-">-</button>
+                
+                <button type="button" class="Calc-btn" data-value="4">4</button>
+                <button type="button" class="Calc-btn" data-value="5">5</button>
+                <button type="button" class="Calc-btn" data-value="6">6</button>
+                <button type="button" class="Calc-btn" data-value="+">+</button>
+                
+                <button type="button" class="Calc-btn" data-value="1">1</button>
+                <button type="button" class="Calc-btn" data-value="2">2</button>
+                <button type="button" class="Calc-btn" data-value="3">3</button>
+                <button type="button" class="Calc-btn calc-btn-tall" data-value="=">=</button>
+                
+                <button type="button" class="Calc-btn calc-btn-wide" data-value="0">0</button>
+                <button type="button" class="Calc-btn" data-value=".">.</button>
+            </div>
+        </template>
     </div>
     <script src="script.js"></script>
 </body>
