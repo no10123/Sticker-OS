@@ -2,6 +2,10 @@
 
 a os where every app is a sticker
 
+https://no10123.github.io/Sticker-OS/
+
+<img width="1462" height="880" alt="image" src="https://github.com/user-attachments/assets/8ccf7ea7-c47c-48ae-86f7-ada8218c7fe6" />
+
 
 credits:
 
