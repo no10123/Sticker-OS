@@ -10,8 +10,10 @@
     <div id="control">
         <h1 class="title centered">Sticker OS</h1>
         <img class="sticker hc" src="hc-link.png"  onclick="window.open('https://hackclub.com/', '_blank');"></img>
+        <img class="sticker github" src="github.png"  onclick="window.open('https://github.com/no10123', '_blank');"></img>
         <img class="sticker calculator" src="calculator.png" onclick="AMI.openApp('calculator')">
         <img class="sticker notes" src="sticky-tape.png" onclick="AMI.openApp('notes')">
+        <img class="sticker maze" src="maze.png" onclick="AMI.openApp('maze')">
     </div>
     <div id="viewport"></div>
     <div id="templates">
@@ -45,6 +47,13 @@
         </template>
         <template id="t-notes" class="dragable hidden">
             <textarea class="notes-textarea" placeholder="notes..."></textarea>
+        </template>
+        <template id="t-maze" class="dragable hidden">
+            <div class="container flex-col-window">
+                <button type="button" class="Calc-btn gen" onclick="genMaze()">Generate Maze</button>
+                <input  type="number" class="gen" id="maze-size" min="2" max="100" value="10">
+                <canvas id="maze-canvas" width="250" height="250"></canvas>
+            </div>
         </template>
     </div>
     <script src="script.js"></script>

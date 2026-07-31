@@ -3,8 +3,9 @@ const viewport = document.getElementById("viewport");
 let W = '<div id="windows">\n';
 
 const systemApps = [
-    { n: "calculator", t: "Calculator", w: 300, h: 450 },
-    { n: "notes",      t: "Notes",      w: 300, h: 450 }
+    { n: "calculator", w: 300, h: 450 },
+    { n: "notes",      w: 300, h: 450 },
+    { n: "maze",       w: 400, h: 450 }
 ];
 
 function CreateApp(n, t, w = 600, h = 450) {
@@ -23,8 +24,8 @@ function CreateApp(n, t, w = 600, h = 450) {
         </div>`;
 }
 
-systemApps.forEach(({ n, t, w, h }) => {
-    CreateApp(n, t, w, h);
+systemApps.forEach(({ n, w, h }) => {
+    CreateApp(n, n, w, h);
 });
 
 viewport.innerHTML = `${W}</div>`;
@@ -187,5 +188,41 @@ function initCalculator() {
                 break;
         }
         return (Math.round(result * 1e8) / 1e8).toString();
+    }
+}
+
+function genMaze() {
+    // generic maze gen i found
+    const canvas = document.getElementById("maze-canvas");
+    const ctx = canvas.getContext("2d");
+    const size = 2 * document.getElementById("maze-size").value + 1;
+    let grid = Array(size).fill().map(() => Array(size).fill(1));
+
+    function carve(x, y) {
+        grid[y][x] = 0;
+        const dirs = [[0, -2], [0, 2], [-2, 0], [2, 0]].sort(() => Math.random() - 0.5);
+        for (let [dx, dy] of dirs) {
+            let nx = x + dx; 
+            let ny = y + dy;
+            if (nx > 0 && nx < size - 1 && ny > 0 && ny < size - 1 && grid[ny][nx] === 1) {
+                grid[y + dy / 2][x + dx / 2] = 0;
+                carve(nx, ny);
+            }
+        }
+    }
+
+    carve(1, 1);
+    grid[1][0] = 0;
+    grid[size - 2][size - 1] = 0;
+
+    ctx.fillStyle = "#1e1e2e";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    const scale = canvas.width / size;
+    ctx.fillStyle = "#cba6f7";
+    for (let y = 0; y < size; y++) {
+        for (let x = 0; x < size; x++) {
+            if (grid[y][x] === 1) ctx.fillRect(x * scale, y * scale, scale, scale);
+        }
     }
 }

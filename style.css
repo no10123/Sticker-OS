@@ -262,3 +262,41 @@ h1, p {
     outline: none;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.github {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    scale: 0.4;
+}
+
+.maze {
+    position: absolute;
+    right: 350px;
+    top: -30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+}
+
+.gen {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--mauve);
+    color: var(--crust);
+}
+
+.gen:hover {
+    background-color: var(--lavender);
+}
+
+#maze {
+    border: 2px solid var(--surface2);
+    border-radius: 4px;
+    background-color: var(--base);
+}
