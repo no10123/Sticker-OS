@@ -337,7 +337,7 @@ h1, p {
 .clock {
     position: absolute;
     scale: 1;
-    top: 20px;
-    left: 30px;
+    top: 25px;
+    left: 35px;
     color: var(--text);
 }

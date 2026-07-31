@@ -226,3 +226,12 @@ function genMaze() {
         }
     }
 }
+
+function updateTime() {
+    var currentTime = new Date().toLocaleString();
+    var timeText = document.querySelector("#clock");
+    timeText.innerHTML = currentTime
+}
+
+updateTime()
+setInterval(updateTime, 1000);
